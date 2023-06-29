@@ -10,7 +10,7 @@ public class Programm {
 
         // task2(getRandArray(), getRandArray());
 
-        // task3(getRandArray(), getRandArray());
+        task3(getRandArray(), getRandArray());
 
     }
 
@@ -46,42 +46,39 @@ public class Programm {
             printArray(a2);
             int[] a3 = new int[a1.length];
             for (int i = 0; i < a1.length; i++) {
-                for (int j = 0; j < a2.length; j++) {
-                    a3[i] = a1[i] - a2[j];
-                }
+                a3[i] = a1[i] - a2[i];
             }
             printArray(a3);
         }
     }
 
     /**
-     * 3) (Дополнительно) Реализуйте метод, принимающий в качестве аргументов два целочисленных массива, 
-     * и возвращающий новый массив, каждый элемент которого равен частному элементов двух входящих массивов в той же ячейке. 
-     * Если длины массивов не равны, необходимо как-то оповестить пользователя. 
-     * Важно: При выполнении метода единственное исключение, которое пользователь может увидеть - RuntimeException, т.е. ваше.
+     * 3) (Дополнительно) Реализуйте метод, принимающий в качестве аргументов два
+     * целочисленных массива,
+     * и возвращающий новый массив, каждый элемент которого равен частному элементов
+     * двух входящих массивов в той же ячейке.
+     * Если длины массивов не равны, необходимо как-то оповестить пользователя.
+     * Важно: При выполнении метода единственное исключение, которое пользователь
+     * может увидеть - RuntimeException, т.е. ваше.
      */
     static void task3(int[] a1, int[] a2) {
         if (a1.length != a2.length) {
             throw new RuntimeException("Разная длина массивов");
-        }       
-        else {
+        } else {
             printArray(a1);
             printArray(a2);
             for (int i = 0; i < a2.length; i++) {
-                if(a2[i] == 0){
+                if (a2[i] == 0) {
                     throw new RuntimeException("Деление на ноль запрещено");
                 }
             }
             int[] a3 = new int[a1.length];
             for (int i = 0; i < a1.length; i++) {
-                for (int j = 0; j < a2.length; j++) {
-                    a3[i] = a1[i] / a2[j];
-                }
+                    a3[i] = a1[i] / a2[i];
             }
             printArray(a3);
         }
     }
-
 
     static int[] getRandArray() {
         int l = rand.nextInt(3, 5);
